@@ -1,69 +1,87 @@
-# React + TypeScript + Vite
+# 🎬 MovieApp — Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **MovieApp** é uma aplicação web construída com **React**, **Tailwind CSS** e **Vite**, que permite explorar um catálogo de filmes, realizar buscas por título, e visualizar detalhes completos de cada filme. Inspirado no visual de plataformas como a Globoplay, o app tem um design cinematográfico escuro, responsivo e com foco em experiência do usuário.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **React** — Biblioteca principal para construção da interface.
+- **Vite** — Ferramenta de build e desenvolvimento super rápida.
+- **TypeScript** — Tipagem estática para maior robustez.
+- **Tailwind CSS** — Framework utilitário para estilização rápida e customizável.
+- **Radix UI** — Componentes acessíveis e de baixo nível.
+- **Axios** — Cliente HTTP para comunicação com o back-end.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Estrutura de Pastas
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+src/
+├── components/ # Componentes reutilizáveis (UI, MovieCard, SearchBar, etc)
+│ └── ui/ # Componentes visuais como Button, Card, Input, etc.
+├── hooks/ # Hooks customizados para chamadas à API
+├── interfaces/ # Tipos TypeScript dos dados (Movie, MovieDetail)
+├── lib/ # Axios config e utilidades globais
+├── pages/ # Páginas principais (Index, MovieDetails, NotFound)
+├── styles/ # Arquivo de estilos globais e design system
+└── main.tsx # Ponto de entrada da aplicação
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+
+---
+
+## 🌐 Funcionalidades
+
+- [x] Listagem de filmes com layout em grid
+- [x] Barra de pesquisa com filtro por título, tipo e ano
+- [x] Página de detalhes com sinopse, elenco, produção, prêmios e avaliações
+- [x] Mensagens de erro para filmes não encontrados
+- [x] Página 404 customizada
+- [x] Layout responsivo e tema escuro com tokens customizados
+- [x] Placeholder para imagens quebradas
+- [x] UX polida com animações e transições suaves
+
+---
+
+## 🧪 Como rodar o projeto localmente
+
+### Pré-requisitos
+
+- Node.js v18+
+- Yarn ou npm
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/movie-app-web.git
+
+# Acesse a pasta
+cd movie-app-web
+
+# Instale as dependências
+yarn install
+# ou
+npm install
+```
+Variáveis de ambiente
+Crie um arquivo .env na raiz com a seguinte variável:
+
+```
+VITE_BASE_URL=http://localhost:3002
+```
+Rodando o projeto:
+
+```
+yarn dev
+# ou
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+📌 To-do/Futuras melhorias
+ 
+ Paginação ou scroll infinito
+ - Sistema de favoritos com persistência local
+ - Filtros por gênero, nota e idioma
+ - Adicionar loading skeletons
+ - Testes unitários com React Testing Library
