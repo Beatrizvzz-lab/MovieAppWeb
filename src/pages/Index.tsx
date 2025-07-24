@@ -41,13 +41,13 @@ const Index = () => {
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
-              Cinema
-              <span className="bg-gradient-primary bg-clip-text text-transparent"> Galaxy</span>
+              Movie
+              <span className="bg-gradient-primary bg-clip-text text-transparent"> App</span>
             </h1>
 
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Explore uma galáxia de filmes épicos. Descubra, pesquise e mergulhe nos detalhes dos
-              seus filmes favoritos.
+              Embarque em uma jornada pela galáxia de Star Wars. Explore filmes épicos, descubra
+              curiosidades, pesquise e mergulhe nos detalhes que tornam essa saga inesquecível.
             </p>
 
             <div className="pt-8">
@@ -66,7 +66,7 @@ const Index = () => {
               <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center">
                   <span className="w-2 h-2 rounded-full bg-primary mr-2" />
-                  {movies.length} filmes disponíveis
+                  {movies.length} Disponíveis
                 </span>
                 <span className="flex items-center">
                   <span className="w-2 h-2 rounded-full bg-primary mr-2" />
@@ -75,6 +75,10 @@ const Index = () => {
                 <span className="flex items-center">
                   <span className="w-2 h-2 rounded-full bg-primary mr-2" />
                   {movies.filter((m) => m.Type === 'series').length} séries
+                </span>
+                <span className="flex items-center">
+                  <span className="w-2 h-2 rounded-full bg-primary mr-2" />
+                  {movies.filter((m) => m.Type === 'game').length} games
                 </span>
               </div>
             )}

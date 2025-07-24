@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Dark cinema theme */
+
     --background: 222 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -37,7 +33,7 @@ All colors MUST be HSL.
     --input: 217 32.6% 17.5%;
     --ring: 43 100% 58%;
 
-    /* Custom design tokens */
+
     --gold: 43 100% 58%;
     --gold-light: 48 100% 65%;
     --gold-dark: 38 100% 50%;

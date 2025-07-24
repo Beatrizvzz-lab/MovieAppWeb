@@ -10,8 +10,6 @@ export default function MovieDetails() {
   const { id } = useParams<{ id: string }>();
   const { movie, loading, notFound } = useMovieDetails(id || null);
 
-  console.log(movie);
-
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
